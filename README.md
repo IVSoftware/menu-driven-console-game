@@ -34,6 +34,9 @@ The `ConsoleKey.Key` value for the '1' key is `ConsoleKey.D1` (and so on...).
 ***
 Every loop iteration displays a menu:
 
+
+[![console][1]][1]
+
     private static void displayMenu()
     {
         Console.Clear();
@@ -55,8 +58,6 @@ And based on the value of `ReadKey` it will exec one of the five actions _or_ it
     private static void editProfile() { }
     private static void play() { }
 
-
-[![console][1]][1]
 
 
   [1]: https://i.stack.imgur.com/NFfCW.png
