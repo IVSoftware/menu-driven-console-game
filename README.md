@@ -1,5 +1,5 @@
 
-The answer to your [question](https://stackoverflow.com/q/74827932/5438626) is _yes_ you can convert an `int` to an `Enum`:
+Your [question](https://stackoverflow.com/q/74827932/5438626) is **Can I Get An Enum From An Int?** The answer is _yes_ you can convert an int to an [Enum](https://learn.microsoft.com/en-us/dotnet/api/system.enum?view=net-7.0) (with upper-case `Enum` is a _class_):
 
     // Works. But is it ideal for the code you posted?
     Enum someEnum = (Enum)Enum.ToObject(typeof(ConsoleKey), 49);
@@ -7,7 +7,7 @@ The answer to your [question](https://stackoverflow.com/q/74827932/5438626) is _
 The value of `someEnum` is now `ConsoleKey.D1`.
 ***
 
-You can also convert an `int` to an `enum` (lower case):
+You can also convert an `int` to an [enum](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum) (with lower case it is a _type_):
 
 
     ConsoleKey key = (ConsoleKey)49;
