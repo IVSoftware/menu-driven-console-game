@@ -1,6 +1,26 @@
-Your [post](https://stackoverflow.com/q/74827932/5438626) shows a call to `ReadKey`. The type returned from this method is a `ConsoleKeyInfo` whose job is to give you all the information you need about the key that was pressed. 
 
-Just because you _can_ cast it to an `int` doesn't mean that you _should_. You have choices!
+The answer to your [question](https://stackoverflow.com/q/74827932/5438626) is _yes_ you can convert an `int` to an `Enum`:
+
+    // Works. But is it ideal for the code you posted?
+    Enum someEnum = (Enum)Enum.ToObject(typeof(ConsoleKey), 49);
+
+The value of `someEnum` is now `ConsoleKey.D1`.
+***
+
+You can also convert an `int` to an `enum` (lower case):
+
+
+    ConsoleKey key = (ConsoleKey)49;
+
+The value of `key` is now `ConsoleKey.D1`.
+***
+
+You can also do this in reverse which is `(int)ConsoleKey.D1` to get a value of 49.
+***
+
+**However** let's look at your code which shows a call to `ReadKey`. The type returned from this method is a `ConsoleKeyInfo` whose job is to give you all the information you need about the key that was pressed. 
+
+Just because you _can_ convert between the two types doesn't mean that you _should_. You have choices!
 
 One good way to take advantage of the format that it returns is to switch on the value of `Key` to perform the action you want. This example is a menu-driven game and the menu is looking for a key between 1 and 5. 
 
@@ -14,7 +34,10 @@ The `ConsoleKey.Key` value for the '1' key is `ConsoleKey.D1` (and so on...).
         while (!exit)
         {
             displayMenu();
-            switch (Console.ReadKey().Key)
+
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+
+            switch (keyInfo.Key)
             {
                 case ConsoleKey.D1: setup(); break;
                 case ConsoleKey.D2: createCharacter(); break;

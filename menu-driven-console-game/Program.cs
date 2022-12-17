@@ -13,7 +13,10 @@ namespace menu_driven_console_game
             while (!exit)
             {
                 displayMenu();
-                switch (Console.ReadKey().Key)
+
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+
+                switch (keyInfo.Key)
                 {
                     case ConsoleKey.D1: setup(); break;
                     case ConsoleKey.D2: createCharacter(); break;
