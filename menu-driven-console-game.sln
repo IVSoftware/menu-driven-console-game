@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "menu-driven-console-game", "menu-driven-console-game\menu-driven-console-game.csproj", "{9406A694-B113-4943-BFFC-9E1166D176C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F3D3A53-3A5E-477B-972B-928C785897DE}"
-	ProjectSection(SolutionItems) = preProject
-		D:\Github\LICENSE.md = D:\Github\LICENSE.md
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
