@@ -1,4 +1,11 @@
-Your post shows a call to `ReadKey`. The type returned from this method is a `ConsoleKeyInfo` whose job is to tell you everything you want to know about the key that was pressed. So just because you _can_ cast it to an `int` doesn't mean that you _should_. One good way to take advantage of the format that it returns is to switch on the value of `Key` to perform the action you want. This example is a menu-driven game and the menu is looking for a key between 1 and 5:
+Your [post](https://stackoverflow.com/q/74827932/5438626) shows a call to `ReadKey`. The type returned from this method is a `ConsoleKeyInfo` whose job is to give you all the information you need about the key that was pressed. 
+
+Just because you _can_ cast it to an `int` doesn't mean that you _should_. You have choices!
+
+One good way to take advantage of the format that it returns is to switch on the value of `Key` to perform the action you want. This example is a menu-driven game and the menu is looking for a key between 1 and 5. 
+
+***
+The `ConsoleKey.Key` value for the '1' key is `ConsoleKey.D1` (and so on...).
 
     static void Main(string[] args)
     {
@@ -25,7 +32,7 @@ Your post shows a call to `ReadKey`. The type returned from this method is a `Co
     }
 
 ***
-First it displays a menu:
+Every loop iteration displays a menu:
 
     private static void displayMenu()
     {
@@ -49,3 +56,7 @@ And based on the value of `ReadKey` it will exec one of the five actions _or_ it
     private static void play() { }
 
 
+[![console][1]][1]
+
+
+  [1]: https://i.stack.imgur.com/NFfCW.png
